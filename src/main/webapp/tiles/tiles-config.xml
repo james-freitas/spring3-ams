@@ -37,10 +37,6 @@
 		<put-attribute name="titulo" value="Serviços"></put-attribute>
 	</definition>
 	
-<!-- 	<definition name="usuario/show" extends="main"> -->
-<!--     	<put-attribute name="conteudo" value="/views/usuario/show.jsp"/> -->
-<!--     	<put-attribute name="titulo" value="Detalhes do usuário"/> -->
-<!--     </definition> -->
-	
+
 
 </tiles-definitions>
