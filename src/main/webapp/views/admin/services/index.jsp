@@ -6,7 +6,7 @@
 	<h2>Serviços</h2>
 
 	
-	<a href="<c:url value='/create' />" class="btn btn-success">Novo Serviço</a>
+	<a href="<c:url value='/admin/services/create' />" class="btn btn-success">Novo Serviço</a>
 	<br />
 	<br />
 	<table class="table">

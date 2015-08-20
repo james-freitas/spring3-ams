@@ -37,6 +37,11 @@
 		<put-attribute name="titulo" value="Serviços"></put-attribute>
 	</definition>
 	
+	<definition name="admin/services/create" extends="main">
+		<put-attribute name="conteudo" value="/views/admin/services/create.jsp" />
+		<put-attribute name="titulo" value="Novo Serviço"></put-attribute>
+	</definition>
+	
 
 
 </tiles-definitions>

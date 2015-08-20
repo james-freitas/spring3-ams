@@ -6,6 +6,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.codeonblue.sphidb.model.Servico;
 import com.codeonblue.sphidb.service.ServicoService;
 
 
@@ -20,5 +21,12 @@ public class ServicoAdminController {
 		modelServico.addAttribute("servicos", servicoService.listarTodos());
 		return "admin/services/index";
 	}
+	
+	@RequestMapping(value="/admin/services/create", method=RequestMethod.GET)
+	public String create(Model model){
+		model.addAttribute("servico", new Servico());
+		return "admin/services/create";
+	}
+	
 	
 }
