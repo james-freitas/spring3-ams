@@ -8,7 +8,9 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.DecimalMin;
+import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -22,6 +24,7 @@ public class Servico {
 	
 	@NotEmpty
 	@NotNull
+	@Size(min=5)
 	private String descricao;
 	
 	@DecimalMin("0.01")
