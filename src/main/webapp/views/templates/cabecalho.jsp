@@ -14,6 +14,8 @@
         <li class="active"><a href="#">Início</a></li>
         <li><a href="#about">Sobre</a></li>
         <li><a href="#contact">Contato</a></li>
+        
+        <li><a href="<c:url value='/admin/services'/>">Services</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li><a href="../navbar/">Padrao</a></li>
@@ -23,3 +25,4 @@
     </div><!--/.nav-collapse -->
   </div>
 </div>
+

@@ -1,5 +1,6 @@
 <%@taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="sf" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 
 <div class="page-header">
@@ -7,7 +8,7 @@
 
 	<br />
 	<br />
-	<sf:form modelAttribute="servico" role="form" action="/admin/services/store" >
+	<sf:form modelAttribute="servico" role="form" action="${pageContext.request.contextPath}/admin/services/store" method="post">
 		<sf:errors />
 
 		<div class="form-group">
@@ -26,8 +27,6 @@
 		<div class="form-group">
 			<sf:button class="btn btn-primary" type="submit" name="submit" >Salvar</sf:button>
 		</div>
-
-
 		
 	</sf:form>
 

@@ -1,8 +1,11 @@
 package com.codeonblue.sphidb.controller;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -28,5 +31,12 @@ public class ServicoAdminController {
 		return "admin/services/create";
 	}
 	
-	
+	@RequestMapping(value="admin/services/store", method=RequestMethod.POST)
+	public String store(@Valid Servico servico, BindingResult result){
+		if(result.hasErrors()){
+			return "admin/services/create";
+		}
+		servicoService.salvar(servico);
+		return "redirect:/admin/services";
+	}
 }
