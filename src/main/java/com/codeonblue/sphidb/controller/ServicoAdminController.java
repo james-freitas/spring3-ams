@@ -6,8 +6,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
 
 import com.codeonblue.sphidb.model.Servico;
 import com.codeonblue.sphidb.service.ServicoService;
@@ -39,4 +41,23 @@ public class ServicoAdminController {
 		servicoService.salvar(servico);
 		return "redirect:/admin/services";
 	}
+	
+	@RequestMapping(value="admin/services/show/{id}", method=RequestMethod.GET)
+	public String show(@PathVariable("id") Integer id, Model model)
+	{
+		Servico service = servicoService.consultarPorId(id);
+		model.addAttribute(service);
+		return "admin/services/show";
+	}
+	
+	
+	@RequestMapping(value="admin/services/update", method=RequestMethod.POST)
+	public String update(@Valid Servico servico, BindingResult result){
+		if(result.hasErrors()){
+			return "admin/services/show";
+		} 
+		servicoService.salvar(servico);
+		return "redirect:/admin/services";
+	}
+	
 }

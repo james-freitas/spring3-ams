@@ -12,12 +12,18 @@
 			<th>ID</th>
 			<th>Descrição</th>
 			<th>Preço</th>
+			<th>Ações</th>
 		</tr>
 		<c:forEach items="${servicos}" var="servico">
 			<tr>
 				<td>${servico.id}</td>
 				<td>${servico.descricao}</td>
 				<td>${servico.preco}</td>
+				<td>
+					<a href="<c:url value='/admin/services/show/${servico.id}' />" class="btn btn-default">Editar</a>
+					<a href="<c:url value='/admin/services/destroy/${servico.id}' />" class="btn btn-danger">Excluir</a>
+					
+				</td>
 			</tr>
 		</c:forEach>		
 	</table>		

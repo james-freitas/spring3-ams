@@ -55,4 +55,5 @@ public class ServicoDAOImpl  implements ServicoDAO {
 		return (List<Servico>) getSession().createCriteria(Servico.class).list();
 	}
 
+
 }

@@ -39,10 +39,11 @@ public abstract class HBDAO<T> implements GenericDAO<T> {
 
 	@Override
 	public void persist(T object) {
-		getSession().saveOrUpdate(object);
-		
+		getSession().saveOrUpdate(object);	
 	}
 
+	
+	
 	@Override
 	public void delete(T object) {
 		getSession().delete(object);
@@ -53,5 +54,6 @@ public abstract class HBDAO<T> implements GenericDAO<T> {
 	public T getById(int id) {
 		return (T) getSession().get(getClazz(), id);
 	}
+	
 
 }
