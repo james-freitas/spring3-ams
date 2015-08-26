@@ -60,4 +60,11 @@ public class ServicoAdminController {
 		return "redirect:/admin/services";
 	}
 	
+	@RequestMapping(value="admin/services/destroy/{id}", method=RequestMethod.GET)
+	public String destroy(@PathVariable("id") Integer id){
+		Servico servico = servicoService.consultarPorId(id);
+		servicoService.excluir(servico);
+		return "redirect:/admin/services";
+	}
+	
 }
